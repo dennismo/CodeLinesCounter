@@ -1,9 +1,11 @@
 import re
 import sys
+import os.path
+from comment_symbol_table import CommentSymbolTable
 
-single_line_comment_symbol = "//"
-multi_line_comment_start = "/*"
-multi_line_comment_end = "*/"
+single_line_comment_symbol = ""
+multi_line_comment_start_symbol = ""
+multi_line_comment_end_symbol = ""
 
 total_lines = 0
 comment_lines = 0
@@ -28,51 +30,63 @@ def record_multi_comment_string(multi_line_string, line_str):
     comment_lines += 1
     comment_lines_in_block += 1
     block_line_comments += 1
-    multi_line_content = re.match(re.escape(multi_line_comment_start) + ".*" + re.escape(multi_line_comment_end),
-                                  line_str)
-
+    multi_line_content = re.search(re.escape(multi_line_comment_start_symbol) + ".*" + re.escape(multi_line_comment_end_symbol),
+                                   line_str)
     if multi_line_content is not None:
         todo_count += len(re.findall("TODO", multi_line_content.group(0)))
-        match_comments(line_str[:multi_line_content.end()])
+        match_comments(line_str[multi_line_content.end():])
     else:
         todo_count += len(re.findall("TODO", multi_line_string.group(0)))
         multi_line_comment_flag = True
 
 
 def match_comments(line_str):
-    global single_line_comment_symbol, multi_line_comment_start, multi_line_comment_end, total_lines, comment_lines, single_line_comment_lines, block_line_comments, \
+    global single_line_comment_symbol, multi_line_comment_start_symbol, multi_line_comment_end_symbol, total_lines, comment_lines, single_line_comment_lines, block_line_comments, \
         comment_lines_in_block, todo_count, multi_line_comment_flag
-    #import pdb; pdb.set_trace()
 
-    single_comment_string = re.match(re.escape(single_line_comment_symbol) + ".*", line_str)
-    multi_line_string = re.match(re.escape(multi_line_comment_start) + ".*", line_str)
+    single_comment_match = re.search(re.escape(single_line_comment_symbol) + ".*", line_str)
+    multi_line_match = re.search(re.escape(multi_line_comment_start_symbol) + ".*", line_str)
 
     if multi_line_comment_flag:
         comment_lines += 1
         comment_lines_in_block += 1
-        multi_line_end_string = re.match(".*?" + re.escape(multi_line_comment_end), line_str)
+        multi_line_end_string = re.match(".*?" + re.escape(multi_line_comment_end_symbol), line_str)
         if multi_line_end_string is not None:
             multi_line_comment_flag = False
             todo_count += len(re.findall("TODO", multi_line_end_string.group(0)))
-            match_comments(line_str[:multi_line_end_string.end()])
+            match_comments(line_str[multi_line_end_string.end():])
         else:
             todo_count += len(re.findall("TODO", line_str))
-    elif single_comment_string is not None and multi_line_string is not None:
-        if single_comment_string.start() < multi_line_string.start():
-            record_single_comment_string(single_comment_string)
+    elif single_comment_match is not None and multi_line_match is not None:
+        if single_comment_match.start() < multi_line_match.start():
+            record_single_comment_string(single_comment_match)
         else:
-            record_multi_comment_string(multi_line_string, line_str)
-    elif single_comment_string is not None:
-        record_single_comment_string(single_comment_string)
-    elif multi_line_string is not None:
-        record_multi_comment_string(multi_line_string, line_str)
+            record_multi_comment_string(multi_line_match, line_str)
+    elif single_comment_match is not None:
+        record_single_comment_string(single_comment_match)
+    elif multi_line_match is not None:
+        record_multi_comment_string(multi_line_match, line_str)
 
 
 def main():
     # TODO check for valid command line input
-    global single_line_comment_symbol, multi_line_comment_start, multi_line_comment_end, total_lines, comment_lines, single_line_comment_lines, block_line_comments, \
+    global single_line_comment_symbol, multi_line_comment_start_symbol, multi_line_comment_end_symbol, total_lines, comment_lines, single_line_comment_lines, block_line_comments, \
         comment_lines_in_block, todo_count, multi_line_comment_flag
     program_path = sys.argv[1]
+
+    # splitext retrieves the extension of the path in the format of ".js" or ".py"
+    extension = os.path.splitext(program_path)[1]
+
+    cst = CommentSymbolTable()
+    comment_table = cst.get_symbols(extension)
+
+    if comment_table is None:
+        print("cannot find the corresponding comment symbols for this file extention: ", extension)
+        return
+
+    single_line_comment_symbol = comment_table[cst.SINGLE_LINE_COMMENT_SYMBOL]
+    multi_line_comment_start_symbol = comment_table[cst.MULTI_LINE_COMMENT_START_SYMBOL]
+    multi_line_comment_end_symbol = comment_table[cst.MULTI_LINE_COMMENT_END_SYMBOL]
 
     with open(program_path) as file:
         line = file.readline()
