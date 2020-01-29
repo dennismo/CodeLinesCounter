@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bedeae31-6161-421c-ab7b-c5ae0da1e468" name="Default Changelist" comment="" />
+    <list default="true" id="bedeae31-6161-421c-ab7b-c5ae0da1e468" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code_lines_counter.py" beforeDir="false" afterPath="$PROJECT_DIR$/code_lines_counter.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,14 +19,22 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1X33WGjd2DjPhYdRK7CS9zaXyMQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -29,6 +42,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
@@ -77,18 +91,53 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580260980627</updated>
-      <workItem from="1580260986609" duration="11131000" />
+      <workItem from="1580260986609" duration="12955000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="1298" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580274004627">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
     <state x="1298" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1057/-1280.23.1280.777@0.23.2560.1057" timestamp="1580274004627" />
+    <state width="1746" height="255" key="GridCell.Tab.0.bottom" timestamp="1580275919422">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state width="1746" height="255" key="GridCell.Tab.0.bottom/0.23.2560.1057/-1280.23.1280.777@0.23.2560.1057" timestamp="1580275919422" />
+    <state width="1746" height="255" key="GridCell.Tab.0.center" timestamp="1580275919421">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state width="1746" height="255" key="GridCell.Tab.0.center/0.23.2560.1057/-1280.23.1280.777@0.23.2560.1057" timestamp="1580275919421" />
+    <state width="1746" height="255" key="GridCell.Tab.0.left" timestamp="1580275919420">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state width="1746" height="255" key="GridCell.Tab.0.left/0.23.2560.1057/-1280.23.1280.777@0.23.2560.1057" timestamp="1580275919420" />
+    <state width="1746" height="255" key="GridCell.Tab.0.right" timestamp="1580275919421">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state width="1746" height="255" key="GridCell.Tab.0.right/0.23.2560.1057/-1280.23.1280.777@0.23.2560.1057" timestamp="1580275919421" />
+    <state width="1746" height="321" key="GridCell.Tab.1.bottom" timestamp="1580275444880">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state width="1746" height="321" key="GridCell.Tab.1.bottom/0.23.2560.1057/-1280.23.1280.777@0.23.2560.1057" timestamp="1580275444880" />
+    <state width="1746" height="321" key="GridCell.Tab.1.center" timestamp="1580275444879">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state width="1746" height="321" key="GridCell.Tab.1.center/0.23.2560.1057/-1280.23.1280.777@0.23.2560.1057" timestamp="1580275444879" />
+    <state width="1746" height="321" key="GridCell.Tab.1.left" timestamp="1580275444879">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state width="1746" height="321" key="GridCell.Tab.1.left/0.23.2560.1057/-1280.23.1280.777@0.23.2560.1057" timestamp="1580275444879" />
+    <state width="1746" height="321" key="GridCell.Tab.1.right" timestamp="1580275444880">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state width="1746" height="321" key="GridCell.Tab.1.right/0.23.2560.1057/-1280.23.1280.777@0.23.2560.1057" timestamp="1580275444880" />
     <state x="1274" y="103" key="SettingsEditor" timestamp="1580263898940">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
@@ -99,6 +148,6 @@
     <state x="926" y="48" key="search.everywhere.popup/0.23.2560.1057/-1280.23.1280.777@0.23.2560.1057" timestamp="1580261025413" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CodeLinesCounter$code_lines_counter.coverage" NAME="code_lines_counter Coverage Results" MODIFIED="1580274005637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CodeLinesCounter$code_lines_counter.coverage" NAME="code_lines_counter Coverage Results" MODIFIED="1580275919413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
