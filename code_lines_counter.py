@@ -85,7 +85,6 @@ def main():
 
     cst = CommentSymbolTable()
     comment_table = cst.get_symbols(extension)
-
     if comment_table is None:
         print("cannot find the corresponding comment symbols for this file extention: ", extension)
         return
