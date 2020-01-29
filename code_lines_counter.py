@@ -39,14 +39,18 @@ def record_multi_comment_string(multi_line_string, line_str):
         todo_count += len(re.findall("TODO", multi_line_string.group(0)))
         multi_line_comment_flag = True
 
-
+# This function takes in a string and process any comments that are in the string.
 def match_comments(line_str):
     global single_line_comment_symbol, multi_line_comment_start_symbol, multi_line_comment_end_symbol, total_lines, comment_lines, single_line_comment_lines, block_line_comments, \
         comment_lines_in_block, todo_count, multi_line_comment_flag
 
+    # single_comment_match and multi_line_match are regex match object
+    # If none of comment is found, the object is None.
     single_comment_match = re.search(re.escape(single_line_comment_symbol) + ".*", line_str)
     multi_line_match = re.search(re.escape(multi_line_comment_start_symbol) + ".*", line_str)
 
+    # multi_line_comment_flag determines if the function is in the state of multi_line comments
+    # flag is true after a multi_line_start_symbol has be detected and false after end symbol.
     if multi_line_comment_flag:
         comment_lines += 1
         comment_lines_in_block += 1
@@ -54,6 +58,8 @@ def match_comments(line_str):
         if multi_line_end_string is not None:
             multi_line_comment_flag = False
             todo_count += len(re.findall("TODO", multi_line_end_string.group(0)))
+            # calling match_comments again will process the remaining of the string after
+            # the end of the multi_line_comments
             match_comments(line_str[multi_line_end_string.end():])
         else:
             todo_count += len(re.findall("TODO", line_str))
