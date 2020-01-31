@@ -1,5 +1,5 @@
 # CodeLinesCounter
-##Introduction and Background
+## Introduction and Background
 This is a line counter for any file, this primarily keep track of the number of lines that are comments.
 Comments are unique and crucial building block of a good piece of code. 
 The number of comment lines, as well as good choices for variable name contribute to the clarity and maintainability of code.
