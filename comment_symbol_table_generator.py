@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # HACK in comment_symbol table, symbol for match nothing is "a^"
 import csv
 

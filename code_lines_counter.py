@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import re
 import sys
 import os.path
@@ -110,12 +112,12 @@ def main():
             total_lines += 1
 
     # printing the results
-    print("Total # of lines: ", total_lines)
-    print("Total # of comment lines: ", comment_lines)
-    print("Total # of single line comments: ", single_line_comment_lines)
-    print("Total # of comment lines within block comments: ", comment_lines_in_block)
-    print("Total # of block line comments: ", block_line_comments)
-    print("Total # of TODO’s: ", todo_count)
+    print("Total number of lines: ", total_lines)
+    print("Total number of comment lines: ", comment_lines)
+    print("Total number of single line comments: ", single_line_comment_lines)
+    print("Total number of comment lines within block comments: ", comment_lines_in_block)
+    print("Total number of block line comments: ", block_line_comments)
+    print("Total number of TODOs: ", todo_count)
 
 
 if __name__ == "__main__":
