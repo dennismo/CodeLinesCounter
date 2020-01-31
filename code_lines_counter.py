@@ -1,7 +1,7 @@
 import re
 import sys
 import os.path
-from comment_symbol_table import CommentSymbolTable
+from comment_symbol_table_generator import CommentSymbolTable
 
 single_line_comment_symbol = ""
 multi_line_comment_start_symbol = ""
@@ -39,8 +39,9 @@ def record_multi_comment_string(multi_line_string, line_str):
         todo_count += len(re.findall("TODO", multi_line_string.group(0)))
         multi_line_comment_flag = True
 
-# This function takes in a string and process any comments that are in the string.
+
 def match_comments(line_str):
+    """This function takes in a string and process any comments that are in the string."""
     global single_line_comment_symbol, multi_line_comment_start_symbol, multi_line_comment_end_symbol, total_lines, comment_lines, single_line_comment_lines, block_line_comments, \
         comment_lines_in_block, todo_count, multi_line_comment_flag
 
@@ -75,18 +76,25 @@ def match_comments(line_str):
 
 
 def main():
-    # TODO check for valid command line input
     global single_line_comment_symbol, multi_line_comment_start_symbol, multi_line_comment_end_symbol, total_lines, comment_lines, single_line_comment_lines, block_line_comments, \
         comment_lines_in_block, todo_count, multi_line_comment_flag
+
+    # check for valid command line inputs
+
+    if len(sys.argv) != 2:
+        print("This program consumes one parameter, the path to file you want to check. Please try again.")
+        return
+
     program_path = sys.argv[1]
 
     # splitext retrieves the extension of the path in the format of ".js" or ".py"
     extension = os.path.splitext(program_path)[1]
 
+    # retrieve the comment symbols from CommentSymbolTable
     cst = CommentSymbolTable()
     comment_table = cst.get_symbols(extension)
     if comment_table is None:
-        print("cannot find the corresponding comment symbols for this file extention: ", extension)
+        print("cannot find the corresponding comment symbols for this file extension: ", extension)
         return
 
     single_line_comment_symbol = comment_table[cst.SINGLE_LINE_COMMENT_SYMBOL]
@@ -101,11 +109,12 @@ def main():
             line = file.readline()
             total_lines += 1
 
-    print("Total # of lines:", total_lines)
-    print("Total # of comment lines:", comment_lines)
+    # printing the results
+    print("Total # of lines: ", total_lines)
+    print("Total # of comment lines: ", comment_lines)
     print("Total # of single line comments: ", single_line_comment_lines)
-    print("Total # of comment lines within block comments:", comment_lines_in_block)
-    print("Total # of block line comments:", block_line_comments)
+    print("Total # of comment lines within block comments: ", comment_lines_in_block)
+    print("Total # of block line comments: ", block_line_comments)
     print("Total # of TODO’s: ", todo_count)
 
 

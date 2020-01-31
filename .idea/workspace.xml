@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bedeae31-6161-421c-ab7b-c5ae0da1e468" name="Default Changelist" comment="" />
+    <list default="true" id="bedeae31-6161-421c-ab7b-c5ae0da1e468" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code_lines_counter.py" beforeDir="false" afterPath="$PROJECT_DIR$/code_lines_counter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment_symbol_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/comment_symbol_table_generator.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +44,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="code_lines_counter" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -88,6 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580260980627</updated>
       <workItem from="1580260986609" duration="22638000" />
+      <workItem from="1580437444851" duration="1534000" />
     </task>
     <servers />
   </component>

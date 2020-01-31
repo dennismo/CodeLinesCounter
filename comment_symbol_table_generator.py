@@ -1,4 +1,4 @@
-# HACK symbol for match nothing is 'a^'
+# HACK in comment_symbol table, symbol for match nothing is "a^"
 import csv
 
 
@@ -10,7 +10,7 @@ class CommentSymbolTable:
     comment_symbol_dict = {}
 
     def __init__(self):
-        with open("comment_symbol_table.csv", mode='r') as csvfile:
+        with open("comment_symbol_table.csv", mode="r") as csvfile:
             csvreader = csv.DictReader(csvfile)
             for row in csvreader:
                 self.comment_symbol_dict[row["extension"]] = {
